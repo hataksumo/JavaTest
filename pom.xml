@@ -13,6 +13,7 @@
         <module>common</module>
         <module>common-web</module>
         <module>simple-web</module>
+        <module>reactive-web</module>
     </modules>
 
     <parent>
