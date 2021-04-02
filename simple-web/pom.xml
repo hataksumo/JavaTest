@@ -9,7 +9,6 @@
     </parent>
     <groupId>indi.zhifa.learn</groupId>
     <artifactId>simple-web</artifactId>
-    <version>1.0</version>
     <name>simple-web</name>
     <description>简单的web应用</description>
     <properties>
@@ -28,6 +27,7 @@
     </dependencies>
 
     <build>
+        <finalName>simple-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -41,6 +41,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

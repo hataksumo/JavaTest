@@ -43,7 +43,7 @@ public class Swagger3Config {
         return new ApiInfoBuilder()
                 .title("Swagger3接口文档")
                 .description("如有疑问，请联系开发工程师-芝法酱。")
-                .contact(new Contact("芝法酱","hataksumo@163.com","hataksumo@163.com"))
+                .contact(new Contact("芝法酱", "hataksumo@163.com", "hataksumo@163.com"))
                 .version("1.0")
                 .build();
     }

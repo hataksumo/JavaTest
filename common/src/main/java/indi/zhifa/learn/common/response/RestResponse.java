@@ -15,49 +15,50 @@ public class RestResponse<T> {
     private int code;
     private int errorCode;
     private String errMsg;
-    public RestResponse(){
+
+    public RestResponse() {
         code = HttpStatus.OK.value();
     }
 
-    public RestResponse(T pData){
+    public RestResponse(T pData) {
         code = HttpStatus.OK.value();
         data = pData;
     }
 
-    public RestResponse(int pCode, int pErrCode, String pErrMsg){
+    public RestResponse(int pCode, int pErrCode, String pErrMsg) {
         code = pCode;
         errorCode = pErrCode;
         errMsg = pErrMsg;
     }
 
-    public static RestResponse ok(){
+    public static RestResponse ok() {
         RestResponse r = new RestResponse();
         return r;
     }
 
-    public static <T>RestResponse ok(T pData){
+    public static <T> RestResponse ok(T pData) {
         RestResponse r = new RestResponse(pData);
         return r;
     }
 
-    public static RestResponse clientError(int pErrCode, String pErrMsg){
-        RestResponse r = new RestResponse(HttpStatus.BAD_REQUEST.value(),pErrCode,pErrMsg);
+    public static RestResponse clientError(int pErrCode, String pErrMsg) {
+        RestResponse r = new RestResponse(HttpStatus.BAD_REQUEST.value(), pErrCode, pErrMsg);
         return r;
     }
 
-    public static RestResponse serverError(int pErrCode, String pErrMsg){
-        RestResponse r = new RestResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),pErrCode,pErrMsg);
+    public static RestResponse serverError(int pErrCode, String pErrMsg) {
+        RestResponse r = new RestResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), pErrCode, pErrMsg);
         return r;
     }
 
-    public static RestResponse notImplement(){
+    public static RestResponse notImplement() {
         RestResponse r = new RestResponse(HttpStatus.NOT_IMPLEMENTED.value(),
                 0,
                 "该接口没有实现");
         return r;
     }
 
-    public static RestResponse unAuthorise(int pErrCode, String pErrMsg){
+    public static RestResponse unAuthorise(int pErrCode, String pErrMsg) {
         RestResponse r = new RestResponse(HttpStatus.UNAUTHORIZED.value(),
                 pErrCode,
                 pErrMsg);

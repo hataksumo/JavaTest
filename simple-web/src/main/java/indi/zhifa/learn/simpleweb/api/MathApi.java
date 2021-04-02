@@ -1,13 +1,9 @@
 package indi.zhifa.learn.simpleweb.api;
-
-import indi.zhifa.learn.common.math.ZfMath;
-import indi.zhifa.learn.common.response.RestResponse;
+import indi.zhifa.learn.common.math.*;
+import indi.zhifa.learn.common.response.*;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1.0/mathApi")
 public class MathApi {
 
-    @Operation(summary  = "快速乘方")
+    @Operation(summary = "快速乘方")
     @GetMapping(path = "/fastPow")
     public RestResponse<Double> fastPow(
             @Parameter(description = "底数") @RequestParam(name = "base") Double pBase,
-            @Parameter(description = "指数") @RequestParam(name = "index") Integer pIndex){
-        Double result = ZfMath.pow(pBase,pIndex);
+            @Parameter(description = "指数") @RequestParam(name = "index") Integer pIndex) {
+        Double result = ZfMath.pow(pBase, pIndex);
         return RestResponse.ok(result);
     }
 }
