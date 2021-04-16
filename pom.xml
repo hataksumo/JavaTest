@@ -8,7 +8,7 @@
     <groupId>indi.zhifa.learn</groupId>
     <artifactId>JavaTest</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <modules>
         <module>common</module>
         <module>common-web</module>
@@ -24,43 +24,99 @@
     </parent>
 
     <properties>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <fastjson.version>1.2.75</fastjson.version>
+        <redis.clients.version>3.5.2</redis.clients.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <hutool.version>5.6.1</hutool.version>
         <spring-boot.version>2.4.4</spring-boot.version>
-        <swagger.version>3.0.0</swagger.version>
-        <docker.image.prefix>zhiFaImages</docker.image.prefix>
+        <knife4j-discovery.version>1.0</knife4j-discovery.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
+        <open-sdk.version>1.0.0</open-sdk.version>
+        <logback.version>1.2.3</logback.version>
+        <dozen.version>5.5.1</dozen.version>
+        <springfox.version>3.0.0</springfox.version>
+        <httpmime.version>4.5.13</httpmime.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>1.9.12</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.clients.version}</version>
+            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>com.citc</groupId>-->
+            <!--                <artifactId>open-sdk</artifactId>-->
+            <!--                <version>${open-sdk.version}</version>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${dozen.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer-spring</artifactId>
+                <version>${dozen.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.craftsman</groupId>
+                <artifactId>dozer-jdk8-support</artifactId>
+                <version>1.0.6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpmime.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>indi.zhifa.learn</groupId>
                 <artifactId>common</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>indi.zhifa.learn</groupId>
                 <artifactId>common-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-boot-starter</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.18</version>
-                <scope>provided</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-
-    </build>
 
 </project>

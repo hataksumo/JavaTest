@@ -5,12 +5,10 @@
     <parent>
         <artifactId>JavaTest</artifactId>
         <groupId>indi.zhifa.learn</groupId>
-        <version>1.0</version>
+        <version>1.0.0</version>
     </parent>
-    <groupId>indi.zhifa.learn</groupId>
     <artifactId>reactive-web</artifactId>
     <name>reactive-web</name>
-    <version>1.0</version>
     <description>Demo project for Spring Boot in order to learn reactive web</description>
     <properties>
         <java.version>11</java.version>
@@ -40,13 +38,21 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <excludes>-->
+<!--                        <exclude>-->
+<!--                            <groupId>org.projectlombok</groupId>-->
+<!--                            <artifactId>lombok</artifactId>-->
+<!--                        </exclude>-->
+<!--                    </excludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

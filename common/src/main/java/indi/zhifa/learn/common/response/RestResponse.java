@@ -1,6 +1,7 @@
 package indi.zhifa.learn.common.response;
 
 import indi.zhifa.learn.common.response.enums.HttpStatus;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 /**
@@ -10,11 +11,16 @@ import lombok.Data;
  * @Create 2021/3/17 10:33
  */
 @Data
-public class RestResponse<T> {
+@Schema(name = "通用返回")
+public class RestResponse<T>{
+    @Schema(name = "返回数据")
     private T data;
+    @Schema(name = "返回码")
     private int code;
+    @Schema(name = "已知逻辑错误的返回码")
     private int errorCode;
-    private String errMsg;
+    @Schema(name = "状态信息")
+    private String msg;
 
     public RestResponse() {
         code = HttpStatus.OK.value();
@@ -28,7 +34,7 @@ public class RestResponse<T> {
     public RestResponse(int pCode, int pErrCode, String pErrMsg) {
         code = pCode;
         errorCode = pErrCode;
-        errMsg = pErrMsg;
+        msg = pErrMsg;
     }
 
     public static RestResponse ok() {
@@ -39,6 +45,10 @@ public class RestResponse<T> {
     public static <T> RestResponse ok(T pData) {
         RestResponse r = new RestResponse(pData);
         return r;
+    }
+
+    public static RestResponse clientError(String pErrMsg) {
+        return clientError(0,pErrMsg);
     }
 
     public static RestResponse clientError(int pErrCode, String pErrMsg) {
