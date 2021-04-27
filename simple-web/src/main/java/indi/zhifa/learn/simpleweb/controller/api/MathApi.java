@@ -1,15 +1,14 @@
-package indi.zhifa.learn.simpleweb.api;
+package indi.zhifa.learn.simpleweb.controller.api;
+
 import indi.zhifa.learn.common.base.ResponseBody;
-import indi.zhifa.learn.common.base.ResponseHeader;
 import indi.zhifa.learn.common.math.ZfMath;
 import indi.zhifa.learn.common.response.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
 
 /**
  * MathApi Created by IntelliJ IDEA.
@@ -23,13 +22,16 @@ import java.time.LocalDateTime;
 @Slf4j
 public class MathApi {
 
+    @Value("haha")
+    String testV;
+
     @Operation(summary = "快速乘方")
     @GetMapping(path = "/fastPow")
     public RestResponse<Double> fastPow(
             @Parameter(description = "底数") @RequestParam(name = "base") Double pBase,
             @Parameter(description = "指数") @RequestParam(name = "index") Integer pIndex) throws InterruptedException {
         Double result = ZfMath.pow(pBase, pIndex);
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         log.info("返回结果时间为"+System.currentTimeMillis());
         return RestResponse.ok(result);
     }
@@ -39,7 +41,7 @@ public class MathApi {
     public ResponseBody centralFastPow(
             @Parameter(description = "底数") @RequestParam(name = "base") Double pBase,
             @Parameter(description = "指数") @RequestParam(name = "index") Integer pIndex) throws InterruptedException {
-        Thread.sleep(500);
+        //Thread.sleep(500);
         Double result = ZfMath.pow(pBase, pIndex);
         return ResponseBody.ok(result);
     }
@@ -49,6 +51,4 @@ public class MathApi {
         log.info("发生了调用 "+pBody);
         return "调用成功";
     }
-
-
 }

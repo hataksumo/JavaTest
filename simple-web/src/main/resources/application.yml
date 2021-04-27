@@ -3,6 +3,15 @@ server:
 spring:
   application:
     name: simple-web
+  datasource:
+    url: jdbc:mysql://localhost:3306/user?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false
+    username: root
+    password: qqhilvMgAl@7
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+  mybatis-plus:
+    # 支持统配符 * 或者 ; 分割
+    typeEnumsPackage: indi.zhifa.learn.simpleweb.bean.enums
 springfox:
   documentation:
     swagger-ui:
